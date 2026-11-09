@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Past Simple: практика</title>
+<style>
+:root{--bg:#faf7f2;--card:#fff;--ink:#23212b;--mute:#6f6b78;--line:#e7e1d6;--acc:#e0603a;--accsoft:#fde9e1;--ok:#2f9e63;--oksoft:#e0f4e8;--bad:#d64545;--badsoft:#fce6e6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1a20;--card:#25242c;--ink:#f1eee8;--mute:#a09cab;--line:#3a3843;--acc:#ff8a63;--accsoft:#3b2a25;--ok:#5fd093;--oksoft:#1f3a2c;--bad:#ff7b7b;--badsoft:#43262a}}
+:root[data-theme="dark"]{--bg:#1b1a20;--card:#25242c;--ink:#f1eee8;--mute:#a09cab;--line:#3a3843;--acc:#ff8a63;--accsoft:#3b2a25;--ok:#5fd093;--oksoft:#1f3a2c;--bad:#ff7b7b;--badsoft:#43262a}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 48px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,5vw,38px);margin:8px 0 4px;letter-spacing:-.5px}
+.sub{color:var(--mute);margin:0 0 20px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:9px 16px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.panel{display:none}.panel.on{display:block}
+.note{background:var(--accsoft);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.vc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.forms{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.v1{color:var(--mute)}.arrow{color:var(--mute)}
+.v2{font-family:Georgia,serif;font-size:24px;font-weight:700;color:var(--acc)}
+.ru{color:var(--mute);font-size:14px;margin-bottom:8px}
+.ex{font-size:15px;margin:3px 0}
+.tag{display:inline-block;width:22px;font-weight:700;color:var(--acc)}
+.say{border:none;background:none;cursor:pointer;font-size:16px;padding:0 4px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.q.ok{border-color:var(--ok);background:var(--oksoft)}.q.bad{border-color:var(--bad);background:var(--badsoft)}
+.n{color:var(--mute);font-weight:700;min-width:22px}
+.sent{flex:1 1 300px}
+.sent small{display:block;color:var(--mute);font-size:13px}
+input.gap{font:inherit;width:150px;max-width:100%;padding:3px 8px;border:none;border-bottom:2px solid var(--acc);background:transparent;color:var(--ink);text-align:center;outline:none;border-radius:4px 4px 0 0}
+input.gap:focus{background:var(--accsoft)}
+.fb{width:100%;font-size:14px;color:var(--bad)}.q.ok .fb{color:var(--ok)}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:16px 0}
+.btn{border:none;border-radius:12px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--acc);color:#fff}
+.btn.sec{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+.score{font-weight:700;margin-left:auto}
+.fcwrap{max-width:440px;margin:0 auto;text-align:center}
+.fc{background:var(--card);border:2px solid var(--line);border-radius:22px;min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;cursor:pointer;user-select:none}
+.fc.back{border-color:var(--acc);background:var(--accsoft)}
+.fl{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute)}
+.fw{font-family:Georgia,serif;font-size:clamp(34px,9vw,48px);font-weight:700;margin:6px 0}
+.fc.back .fw{color:var(--acc)}
+.fs{color:var(--mute);font-size:15px}
+.hint{color:var(--mute);font-size:13px;margin:10px 0}
+.fcb{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.opt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 14px;font:inherit;cursor:pointer}
+.opt:hover{border-color:var(--acc)}
+.opt.ok{border-color:var(--ok);background:var(--oksoft)}
+.opt.bad{border-color:var(--bad);background:var(--badsoft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Past Simple: повторяем глаголы</h1>
+  <p class="sub">Прошедшее простое время · 16 глаголов · примеры и упражнения</p>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p1">1. Формы и примеры</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p2">2. Поставь в Past Simple</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p3">3. Отрицания и вопросы</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p4">4. Флеш-карточки</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p5">5. Тест: выбери форму</button>
+  </div>
+
+  <section class="panel on" id="p1">
+    <div class="note"><b>Запомни:</b> в отрицаниях и вопросах нужен <b>did</b>, а глагол возвращается в начальную форму: <i>She didn’t come. Did she come?</i> Исключение здесь — <b>can</b>: <i>couldn’t</i>, <i>Could you…?</i> Нажми на 🔊, чтобы послушать пример.</div>
+    <div class="grid" id="cards"></div>
+  </section>
+
+  <section class="panel" id="p2">
+    <div class="note">Впиши глагол в скобках в <b>Past Simple</b>. Для put on укажи обе части: <i>put on</i>.</div>
+    <div id="l2"></div>
+    <div class="bar"><button class="btn" data-check="2">Проверить</button><button class="btn sec" data-reset="2">Заново</button><span class="score" id="s2"></span></div>
+  </section>
+
+  <section class="panel" id="p3">
+    <div class="note">Впиши пропущенное слово или слова: <i>didn’t go</i>, <i>Did</i>, <i>eat</i>… Можно писать и <i>did not</i>.</div>
+    <div id="l3"></div>
+    <div class="bar"><button class="btn" data-check="3">Проверить</button><button class="btn sec" data-reset="3">Заново</button><span class="score" id="s3"></span></div>
+  </section>
+
+  <section class="panel" id="p4">
+    <div class="fcwrap">
+      <div class="hint">Нажми на карточку, чтобы перевернуть. Потом выбери: «Знаю» или «Ещё раз».</div>
+      <div id="fc"></div>
+      <div class="fcb" id="fcb"><button class="btn sec" data-act="again">Ещё раз</button><button class="btn" data-act="know">Знаю ✓</button></div>
+      <div class="hint" id="fcp"></div>
+      <div class="fcb"><button class="btn sec" data-act="swap">⇄ Поменять стороны</button><button class="btn sec" data-act="shuffle">Перемешать</button></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p5">
+    <div class="note">Выбери правильную форму глагола. Ответ можно дать только один раз, так что думай внимательно.</div>
+    <div id="l4"></div>
+    <div class="bar"><button class="btn sec" data-act="r4">Заново</button><span class="score" id="s4"></span></div>
+  </section>
+</div>
+
+<script>
+const V=[
+["come","came","приходить","She came to class late yesterday.","She didn’t come to class late yesterday.","Did she come to class late yesterday?"],
+["buy","bought","покупать","I bought a new phone last week.","I didn’t buy a new phone last week.","Did you buy a new phone last week?"],
+["can","could","мочь, уметь","I could swim when I was five.","I couldn’t swim when I was five.","Could you swim when you were five?"],
+["drink","drank","пить","He drank two cups of coffee this morning.","He didn’t drink two cups of coffee this morning.","Did he drink two cups of coffee this morning?"],
+["feel","felt","чувствовать","We felt tired after the trip.","We didn’t feel tired after the trip.","Did you feel tired after the trip?"],
+["find","found","находить","I found my keys under the sofa.","I didn’t find my keys under the sofa.","Did you find your keys under the sofa?"],
+["think","thought","думать","She thought the film was boring.","She didn’t think the film was boring.","Did she think the film was boring?"],
+["go","went","идти, ехать","They went to the beach on Sunday.","They didn’t go to the beach on Sunday.","Did they go to the beach on Sunday?"],
+["get","got","получать","He got a text from his boss an hour ago.","He didn’t get a text from his boss.","Did he get a text from his boss?"],
+["know","knew","знать","I knew the answer to the question.","I didn’t know the answer to the question.","Did you know the answer to the question?"],
+["have","had","иметь; есть (еду)","We had dinner at eight o’clock.","We didn’t have dinner at eight o’clock.","Did you have dinner at eight o’clock?"],
+["put on","put on","надевать","She put on her coat and left.","She didn’t put on her coat.","Did she put on her coat?"],
+["say","said","сказать","He said hello to everyone.","He didn’t say hello to everyone.","Did he say hello to everyone?"],
+["take","took","брать; ехать (на)","I took a taxi to the airport.","I didn’t take a taxi to the airport.","Did you take a taxi to the airport?"],
+["wear","wore","носить","She wore a red dress to the party.","She didn’t wear a red dress to the party.","Did she wear a red dress to the party?"],
+["eat","ate","есть, кушать","We ate pizza for lunch yesterday.","We didn’t eat pizza for lunch yesterday.","Did you eat pizza for lunch yesterday?"]
+];
+const E2=[
+["Yesterday we ___ (come) home at midnight.","Вчера мы пришли домой в полночь.","came"],
+["Last Friday she ___ (buy) a ticket to Paris.","В прошлую пятницу она купила билет в Париж.","bought"],
+["When I was a child, I ___ (can) ride a bike at four.","В детстве я умел кататься на велосипеде в четыре года.","could"],
+["He ___ (drink) a glass of water and went to bed.","Он выпил стакан воды и лёг спать.","drank"],
+["I ___ (feel) very happy at the party.","Я чувствовал себя очень счастливым на вечеринке.","felt"],
+["They ___ (find) a nice café near the hotel.","Они нашли хорошее кафе рядом с отелем.","found"],
+["We ___ (think) it was a good idea.","Мы думали, что это хорошая идея.","thought"],
+["Last summer I ___ (go) to Italy.","Прошлым летом я ездил в Италию.","went"],
+["She ___ (get) a new job in March.","В марте она получила новую работу.","got"],
+["I ___ (know) him at school.","Я знал его в школе.","knew"],
+["We ___ (have) a great time in Spain.","Мы отлично провели время в Испании.","had"],
+["It was cold, so I ___ (put on) my jacket.","Было холодно, поэтому я надел куртку.","put on"],
+["She ___ (say) “thank you” and smiled.","Она сказала «спасибо» и улыбнулась.","said"],
+["He ___ (take) a shower after the gym.","Он принял душ после спортзала.","took"],
+["He ___ (wear) a suit to the interview.","Он надел костюм на собеседование.","wore"],
+["I ___ (eat) breakfast at seven today.","Сегодня я позавтракал в семь.","ate"]
+];
+const E3=[
+["He ___ (not / think) it was funny.","Он не думал, что это смешно.","didn't think"],
+["___ you find your phone yesterday?","Ты нашёл вчера свой телефон?","did"],
+["What did you ___ (eat) for lunch?","Что ты ел на обед?","eat"],
+["We ___ (not / go) out last night.","Мы не выходили вчера вечером.","didn't go"],
+["___ she come to the party?","Она пришла на вечеринку?","did"],
+["I ___ (not / have) time to call you.","У меня не было времени тебе позвонить.","didn't have"],
+["Where did he ___ (buy) that jacket?","Где он купил эту куртку?","buy"],
+["She ___ (not / say) anything.","Она ничего не сказала.","didn't say"],
+["I ___ (not / can) open the door.","Я не смог открыть дверь.","couldn't"],
+["___ you swim when you were five?","Ты умел плавать в пять лет?","could"],
+["They ___ (not / wear) uniforms.","Они не носили форму.","didn't wear"],
+["Did he ___ (know) the answer?","Он знал ответ?","know"],
+["She ___ (not / drink) coffee last night.","Она не пила кофе вчера вечером.","didn't drink"],
+["What time did you ___ (get) up?","Во сколько ты встал?","get"],
+["Did you ___ (take) a taxi?","Ты ехал на такси?","take"],
+["He ___ (not / put on) his hat.","Он не надел шапку.","didn't put on"]
+];
+const $=s=>document.querySelector(s);
+const norm=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ").trim().replace(/\bdid not\b/g,"didn't").replace(/\bcould not\b/g,"couldn't").replace(/[.?!]+$/,"");
+const pretty=s=>s.replace(/'/g,"’");
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+
+$("#cards").innerHTML=V.map((v,i)=>`<div class="vc"><div class="forms"><span class="v1">${v[0]}</span><span class="arrow">→</span><span class="v2">${v[1]}</span></div><div class="ru">${v[2]}</div>
+<div class="ex"><span class="tag">＋</span>${v[3]} <button class="say" data-say="${i}" aria-label="Послушать">🔊</button></div>
+<div class="ex"><span class="tag">−</span>${v[4]}</div><div class="ex"><span class="tag">?</span>${v[5]}</div></div>`).join("");
+$("#cards").addEventListener("click",e=>{const b=e.target.closest("[data-say]");if(b)say(V[b.dataset.say][3])});
+
+const data={2:E2,3:E3};
+function render(k){
+  $("#l"+k).innerHTML=data[k].map((e,i)=>{
+    const parts=e[0].split("___");
+    return `<div class="q" id="q${k}-${i}"><span class="n">${i+1}</span><div class="sent">${parts[0]}<input class="gap" id="i${k}-${i}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Ответ ${i+1}">${parts[1]}<small>${e[1]}</small></div><div class="fb" id="f${k}-${i}"></div></div>`}).join("");
+  $("#s"+k).textContent="";
+}
+function check(k){
+  let ok=0;
+  data[k].forEach((e,i)=>{
+    const inp=$("#i"+k+"-"+i),q=$("#q"+k+"-"+i),fb=$("#f"+k+"-"+i);
+    const good=norm(inp.value)===norm(e[2]);
+    q.className="q "+(good?"ok":"bad");
+    fb.textContent=good?"✓ Верно!":(inp.value.trim()?"✗ Не совсем. Правильно: ":"Правильный ответ: ")+pretty(e[2]);
+    if(good)ok++;
+  });
+  $("#s"+k).textContent=`Результат: ${ok} из ${data[k].length}`+(ok===data[k].length?" 🎉":"");
+}
+render(2);render(3);
+document.addEventListener("click",e=>{
+  const t=e.target.closest(".tab");
+  if(t){document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.id===t.dataset.p))}
+  const c=e.target.closest("[data-check]");if(c)check(c.dataset.check);
+  const r=e.target.closest("[data-reset]");if(r)render(r.dataset.reset);
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&e.target.classList.contains("gap")){
+    const all=[...e.target.closest(".panel").querySelectorAll("input.gap")],i=all.indexOf(e.target);
+    if(i<all.length-1)all[i+1].focus();else e.target.closest(".panel").querySelector("[data-check]").click();
+  }
+});
+/* Flashcards */
+let deck,flip,rev=false,known;
+function fcStart(){deck=V.map((_,i)=>i).sort(()=>Math.random()-.5);flip=false;known=0;fcDraw()}
+function fcDraw(){
+  const box=$("#fc");
+  if(!deck.length){box.innerHTML=`<div class="fc back" style="cursor:default"><div class="fw">🎉</div><div class="fs">Все ${V.length} глаголов выучены!</div></div>`;$("#fcb").style.display="none";$("#fcp").textContent="";return}
+  $("#fcb").style.display=flip?"flex":"none";
+  const v=V[deck[0]],past=rev?!flip:flip;
+  box.innerHTML=past
+    ?`<div class="fc back" data-flip><div class="fl">Past Simple</div><div class="fw">${v[1]}</div><div class="fs">${v[3]}</div></div>`
+    :`<div class="fc" data-flip><div class="fl">Present</div><div class="fw">${v[0]}</div><div class="fs">${v[2]}</div></div>`;
+  $("#fcp").textContent=`Осталось: ${deck.length} · Выучено: ${known}`;
+}
+fcStart();
+
+/* Test */
+const E4=[
+["Yesterday my brother ___ home early.","Вчера мой брат пришёл домой рано.","came",["come","comed","comes"]],
+["She ___ some milk at the shop.","Она купила молоко в магазине.","bought",["buy","buyed","buys"]],
+["I ___ speak English when I was ten.","Я умел говорить по-английски в десять лет.","could",["can","coulded","cans"]],
+["We ___ tea in the café.","Мы пили чай в кафе.","drank",["drink","drinked","drunk"]],
+["He ___ sick yesterday.","Вчера он плохо себя чувствовал.","felt",["feel","feeled","feels"]],
+["I ___ a wallet on the street.","Я нашёл кошелёк на улице.","found",["find","finded","finds"]],
+["She ___ about her old job.","Она думала о своей старой работе.","thought",["think","thinked","thinks"]],
+["They ___ to the cinema last night.","Они ходили в кино вчера вечером.","went",["go","goed","gone"]],
+["I ___ a letter from my friend.","Я получил письмо от друга.","got",["get","getted","gets"]],
+["He ___ the way to the station.","Он знал дорогу до вокзала.","knew",["know","knowed","known"]],
+["She ___ a headache yesterday.","Вчера у неё болела голова.","had",["have","haved","has"]],
+["He ___ his shoes and went out.","Он надел ботинки и вышел.","put on",["puts on","putted on","putting on"]],
+["She ___ goodbye and left.","Она попрощалась и ушла.","said",["say","sayed","says"]],
+["We ___ a bus to work.","Мы поехали на работу на автобусе.","took",["take","taked","taken"]],
+["He ___ glasses at school.","В школе он носил очки.","wore",["wear","weared","worn"]],
+["I ___ toast for breakfast.","Я съел тост на завтрак.","ate",["eat","eated","eaten"]]
+];
+let sc4=0,an4=0;
+function r4(){
+  sc4=0;an4=0;
+  $("#l4").innerHTML=E4.map((e,i)=>{
+    const p=e[0].split("___"),o=[e[2],...e[3]].sort(()=>Math.random()-.5);
+    return `<div class="q" id="q4-${i}"><span class="n">${i+1}</span><div class="sent">${p[0]}<b>___</b>${p[1]}<small>${e[1]}</small><div class="opts">${o.map(x=>`<button class="opt" data-q="${i}" data-a="${x}">${x}</button>`).join("")}</div></div></div>`}).join("");
+  $("#s4").textContent="";
+}
+r4();
+
+document.addEventListener("click",e=>{
+  if(e.target.closest("[data-flip]")){flip=!flip;fcDraw();return}
+  const a=e.target.closest("[data-act]");
+  if(a){
+    const k=a.dataset.act;
+    if(k==="know"){deck.shift();known++;flip=false;fcDraw()}
+    else if(k==="again"){deck.push(deck.shift());flip=false;fcDraw()}
+    else if(k==="swap"){rev=!rev;flip=false;fcDraw()}
+    else if(k==="shuffle"){fcStart()}
+    else if(k==="r4"){r4()}
+    return;
+  }
+  const b=e.target.closest(".opt");
+  if(b){
+    const q=$("#q4-"+b.dataset.q);
+    if(q.dataset.done)return;
+    q.dataset.done=1;an4++;
+    const right=E4[b.dataset.q][2],good=b.dataset.a===right;
+    if(good)sc4++;
+    q.className="q "+(good?"ok":"bad");
+    q.querySelectorAll(".opt").forEach(o=>{if(o.dataset.a===right)o.classList.add("ok");else if(o===b)o.classList.add("bad")});
+    $("#s4").textContent=`Верно: ${sc4} из ${an4}`+(an4===E4.length?` (всего ${E4.length})`+(sc4===E4.length?" 🎉":""):"");
+  }
+});
+</script>
+</body>
+</html>
